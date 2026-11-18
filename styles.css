@@ -1,0 +1,116 @@
+/* Cochran Mineral Co. — survey-sheet palette */
+:root {
+  --quartz: #f2f3ef;      /* page */
+  --host-rock: #d9dcd4;   /* rules, tile ground */
+  --galena: #1e2a31;      /* ink */
+  --silver: #6f787d;      /* secondary text */
+  --electrum: #9c7f2a;    /* accent (text-safe) */
+  --electrum-pale: #c9ad5a;
+  --measure: 68ch;
+  --serif: "Libre Caslon Text", Georgia, serif;
+  --sans: "Public Sans", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--quartz);
+  color: var(--galena);
+  font: 400 1.0625rem/1.65 var(--sans);
+}
+
+a { color: var(--galena); text-decoration-color: var(--electrum-pale); text-underline-offset: 3px; text-decoration-thickness: 2px; }
+a:hover { text-decoration-color: var(--electrum); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--electrum); outline-offset: 3px; border-radius: 2px; }
+
+.wrap { width: min(1080px, 100% - 3rem); margin-inline: auto; }
+
+/* Header */
+.site-header { border-bottom: 1px solid var(--host-rock); }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding-block: 1.1rem; flex-wrap: wrap; }
+.wordmark { font: 700 1.15rem/1.2 var(--serif); text-decoration: none; letter-spacing: 0.01em; }
+.wordmark span { color: var(--silver); font-weight: 400; }
+.site-nav { display: flex; gap: 1.6rem; font-size: 0.95rem; }
+.site-nav a { text-decoration: none; padding-block: 0.25rem; border-bottom: 2px solid transparent; }
+.site-nav a:hover { border-bottom-color: var(--electrum-pale); }
+.site-nav a[aria-current="page"] { border-bottom-color: var(--electrum); }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--host-rock); }
+.hero .contours { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--host-rock); pointer-events: none; }
+.hero .wrap { position: relative; display: grid; grid-template-columns: 1.3fr 1fr; gap: 3rem; align-items: center; padding-block: 5.5rem 5rem; }
+.hero h1 { font: 400 clamp(2.4rem, 5vw, 3.6rem)/1.08 var(--serif); margin: 0 0 1.25rem; letter-spacing: -0.01em; }
+.hero p { font-size: 1.15rem; max-width: 46ch; margin: 0; color: #36434a; }
+
+/* Element tiles: the one memorable thing */
+.elements { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; }
+.element {
+  aspect-ratio: 1;
+  background: var(--quartz);
+  border: 2px solid var(--galena);
+  padding: 0.7rem 0.75rem;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.element .z { font: 600 0.85rem/1 var(--sans); color: var(--silver); }
+.element .sym { font: 400 clamp(2rem, 4.2vw, 3rem)/1 var(--serif); }
+.element .name { font: 500 0.85rem/1.2 var(--sans); }
+.element.alloy { border-color: var(--electrum); background: linear-gradient(135deg, #efe4bf 0%, #e3e5e2 100%); }
+.element.alloy .z { color: var(--electrum); }
+.element.alloy .sym { font-size: clamp(1.45rem, 2.9vw, 2.1rem); white-space: nowrap; }
+.elements-caption { grid-column: 1 / -1; font-size: 0.85rem; color: var(--silver); margin-top: 0.25rem; }
+
+/* Sections */
+main section { padding-block: 4.5rem; }
+main section + section { border-top: 1px solid var(--host-rock); }
+h2 { font: 400 clamp(1.7rem, 3vw, 2.2rem)/1.2 var(--serif); margin: 0 0 1.5rem; }
+h3 { font: 600 1.15rem/1.3 var(--sans); margin: 0 0 0.5rem; }
+p { max-width: var(--measure); }
+
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.split > div { border-left: 3px solid var(--electrum-pale); padding-left: 1.25rem; }
+.split p { margin: 0; }
+
+.aside-link { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: end; }
+.button {
+  display: inline-block; font: 600 1rem/1 var(--sans); text-decoration: none;
+  background: var(--galena); color: var(--quartz); padding: 0.95rem 1.4rem; border-radius: 2px;
+}
+.button:hover { background: #2c3d46; }
+
+.contact dl { display: grid; grid-template-columns: max-content 1fr; gap: 0.6rem 2rem; margin: 0; }
+.contact dt { color: var(--silver); }
+.contact dd { margin: 0; }
+
+/* Apps page */
+.page-head { padding-block: 4rem 2.5rem; border-bottom: 1px solid var(--host-rock); }
+.page-head h1 { font: 400 clamp(2.2rem, 4.5vw, 3.2rem)/1.1 var(--serif); margin: 0 0 1rem; }
+.page-head p { font-size: 1.15rem; margin: 0; color: #36434a; }
+
+.app-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--host-rock); }
+.app-list li { padding-block: 1.25rem; border-bottom: 1px solid var(--host-rock); }
+.empty { border: 2px dashed var(--host-rock); padding: 1.75rem; max-width: var(--measure); }
+.empty p { margin: 0; }
+
+.principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+.principles p { margin: 0; }
+
+/* Policy */
+.policy { max-width: var(--measure); }
+.policy h2 { font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 0.75rem; }
+.policy ul { padding-left: 1.2rem; }
+.effective { color: var(--silver); font-size: 0.95rem; }
+
+/* Footer */
+.site-footer { border-top: 1px solid var(--host-rock); padding-block: 2.25rem; font-size: 0.92rem; color: var(--silver); }
+.site-footer .wrap { display: flex; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+.site-footer a { color: var(--silver); }
+
+@media (max-width: 760px) {
+  .hero .wrap, .split, .aside-link, .principles { grid-template-columns: 1fr; }
+  .hero .wrap { padding-block: 3.5rem; gap: 2.5rem; }
+  .site-nav { gap: 1.1rem; }
+  main section { padding-block: 3.25rem; }
+}

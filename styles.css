@@ -114,3 +114,19 @@ p { max-width: var(--measure); }
   .site-nav { gap: 1.1rem; }
   main section { padding-block: 3.25rem; }
 }
+
+/* App pages */
+.app-head .wrap { display: flex; gap: 1.75rem; align-items: center; }
+.app-icon { border-radius: 22px; flex: none; box-shadow: 0 1px 0 var(--host-rock); }
+.status { margin-top: 0.75rem !important; font-size: 0.98rem !important; color: var(--electrum) !important; font-weight: 600; }
+.app-intro { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem; align-items: start; }
+.phones { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.phones img { width: 100%; height: auto; border-radius: 18px; border: 1px solid var(--host-rock); }
+.app-list a.app-row { display: flex; gap: 1.25rem; align-items: center; text-decoration: none; }
+.app-list .app-row img { border-radius: 14px; flex: none; }
+.app-list .app-row strong { font: 600 1.15rem/1.3 var(--sans); display: block; }
+.app-list .app-row span { color: var(--silver); }
+@media (max-width: 760px) {
+  .app-intro { grid-template-columns: 1fr; }
+  .app-head .wrap { align-items: flex-start; }
+}

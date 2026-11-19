@@ -31,8 +31,20 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--electrum); outl
 /* Header */
 .site-header { border-bottom: 1px solid var(--host-rock); }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding-block: 1.1rem; flex-wrap: wrap; }
-.wordmark { font: 700 1.15rem/1.2 var(--serif); text-decoration: none; letter-spacing: 0.01em; }
-.wordmark span { color: var(--silver); font-weight: 400; }
+/* Wordmark: an assay tile beside a two-line nameplate */
+.wordmark { display: inline-flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--galena); }
+.wm-tile {
+  width: 2.6rem; height: 2.6rem; flex: none; position: relative;
+  border: 2px solid var(--electrum); background: linear-gradient(135deg, #efe4bf 0%, #e3e5e2 100%);
+  display: grid; place-items: center; font: 400 1.15rem/1 var(--serif);
+}
+.wm-tile span { position: absolute; top: 3px; left: 4px; font: 600 0.5rem/1 var(--sans); color: var(--electrum); }
+.wm-text { display: flex; flex-direction: column; gap: 0.18rem; }
+.wm-name { font: 700 1.45rem/1 var(--serif); letter-spacing: 0.01em; }
+.wm-sub {
+  font: 600 0.66rem/1 var(--sans); text-transform: uppercase; letter-spacing: 0.3em; color: var(--electrum);
+  border-top: 1px solid var(--electrum-pale); padding-top: 0.28rem;
+}
 .site-nav { display: flex; gap: 1.6rem; font-size: 0.95rem; }
 .site-nav a { text-decoration: none; padding-block: 0.25rem; border-bottom: 2px solid transparent; }
 .site-nav a:hover { border-bottom-color: var(--electrum-pale); }

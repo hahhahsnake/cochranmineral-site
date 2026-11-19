@@ -1,7 +1,6 @@
 # cochranmineral.com
 
-Website for Cochran Mineral Co., LLC. Static HTML served by GitHub Pages from `main`.
+Website for Cochran Mineral Company, a Lodeline Holdings company. Static HTML served by GitHub Pages from `main`.
 
 - `index.html`: home
-- `apps.html`: apps and app support
-- `privacy.html`: app privacy policy (linked from App Store and Google Play listings)
+- `apps.html`, `aislewren.html`, `privacy.html`: redirects to stampmillsoftware.com, where the apps, app support and the privacy policy now live
